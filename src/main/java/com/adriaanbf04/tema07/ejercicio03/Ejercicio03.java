@@ -11,27 +11,39 @@ public class Ejercicio03 {
             opcion = principalMenu();
             switch (opcion) {
                 case 1:
-                    //Añadir un alumno al centro (Centro.addClasmate())
+                    centro.addClassmate();
                     break;
                 case 2:
-                    //Centro.deleteClassmate(NIA del alumno);
+                    System.out.println("Introduce the NIA: ");
+                    int nia = scanner.nextInt();
+                    //Eliminar el alumno
+                    centro.deleteClassmate(nia);
                     break;
                 case 3:
-                    //Añadir un alumno al centro(int opcionDos = menuDos())
                     do {
                         optionTwo = secondaryMenu();
                         switch (optionTwo) {
                             case 1:
-                                //Todos los que pertenezcan a ese grupo
+                                System.out.println("Introduce the group: ");
+                                int group = scanner.nextInt();
+                                centro.searchForGroup(group);
                                 break;
                             case 2:
-                                //Todos los que tengan esa edad
+                                System.out.println("Introduce the age: ");
+                                int age = scanner.nextInt();
+                                String lookingUpTwo = centro.searchForAge(age);
+                                System.out.println(lookingUpTwo);
                                 break;
                             case 3:
                                 //Cuando ponga el NIA, datos del alumno
                                 break;
                             case 4:
-                                //Los que empiezan por la misma letra de apellido
+                                System.out.println("Introduce what letter start his surname: ");
+                                String surname = scanner.nextLine();
+                                char letter = surname.charAt(0);
+                                String lookingUpThree = centro.searchForSurname(letter);
+                                System.out.println(lookingUpThree);
+                                break;
                         }
                     }while(optionTwo!= 0);
                     break;
@@ -43,14 +55,14 @@ public class Ejercicio03 {
         boolean valid;
         int option;
         int min = 0;
-        int max = 2;
+        int max = 3;
         System.out.println("************************");
         System.out.println("*******CLASSMATES*******");
         System.out.println("************************");
         System.out.println("\n");
         do {
             System.out.println("1. New classmate");
-            System.out.println("2. Baja classmate");
+            System.out.println("2. Delete classmate");
             System.out.println("3. Queries");
             System.out.println("-------------------------");
             System.out.println("0. Exit");

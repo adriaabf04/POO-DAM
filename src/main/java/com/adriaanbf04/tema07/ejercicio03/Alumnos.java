@@ -1,12 +1,12 @@
 package com.adriaanbf04.tema07.ejercicio03;
 
 public class Alumnos {
-    private int nia;
-    private String nombre;
-    private String apellidos ;
-    private String fecha;
-    private int grupo;
-    private int telefono;
+    private final int nia;
+    private final String nombre;
+    private final String apellidos ;
+    private final String fecha;
+    private final int grupo;
+    private final int telefono;
 
     public Alumnos(int nia, String nombre, String apellidos, String fecha, int grupo, int telefono) {
         this.nia = nia;
@@ -33,11 +33,21 @@ public class Alumnos {
         return fecha;
     }
 
-    public int getGrupo() {
-        return grupo;
-    }
+    public int getGrupo() {return grupo;}
 
     public int getTelefono() {
         return telefono;
+    }
+
+    @Override
+    public String toString() {
+        return "Alumnos{" +
+                "nia=" + nia +
+                ", nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", fecha='" + fecha + '\'' +
+                ", grupo=" + grupo +
+                ", telefono=" + telefono +
+                '}';
     }
 }
