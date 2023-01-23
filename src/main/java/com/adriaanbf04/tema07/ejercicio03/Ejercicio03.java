@@ -11,13 +11,20 @@ public class Ejercicio03 {
             opcion = principalMenu();
             switch (opcion) {
                 case 1:
-                    centro.addClassmate();
+                    if (!centro.newStudent()) {
+                        System.out.println("Ya no se admiten más alumnos");
+                    } else {
+                        System.out.println("Student added");
+                    }
                     break;
                 case 2:
                     System.out.println("Introduce the NIA: ");
                     int nia = scanner.nextInt();
-                    //Eliminar el alumno
-                    centro.deleteClassmate(nia);
+                    if(!centro.deleteStudent(nia)) {
+                        System.out.println("No se encuentra el alumno");
+                    } else {
+                        System.out.println("Student deleted");
+                    }
                     break;
                 case 3:
                     do {
@@ -31,22 +38,21 @@ public class Ejercicio03 {
                             case 2:
                                 System.out.println("Introduce the age: ");
                                 int age = scanner.nextInt();
-                                String lookingUpTwo = centro.searchForAge(age);
-                                System.out.println(lookingUpTwo);
+                                System.out.println(centro.searchForAge(age));
                                 break;
                             case 3:
-                                //Cuando ponga el NIA, datos del alumno
+                                System.out.println("Introduce the NIA: ");
+                                int niaStudent = scanner.nextInt();
+                                centro.searchForNia(niaStudent);
                                 break;
                             case 4:
                                 System.out.println("Introduce what letter start his surname: ");
                                 String surname = scanner.nextLine();
                                 char letter = surname.charAt(0);
-                                String lookingUpThree = centro.searchForSurname(letter);
-                                System.out.println(lookingUpThree);
+                                System.out.println(centro.searchForSurname(letter));
                                 break;
                         }
                     }while(optionTwo!= 0);
-                    break;
             }
         }while(opcion!= 0);
     }
