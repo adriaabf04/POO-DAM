@@ -15,10 +15,10 @@ public class CentroB {
             int nia = faker.number().numberBetween(100000000,999999999);
             String nombre = faker.name().name();
             String apellido = faker.name().name();
-            String fecha = faker.date().toString();
+            int edad = faker.number().numberBetween(7, 30);
             int grupo = faker.number().numberBetween(0,10);
             int telefono = faker.number().numberBetween(60000000,69999999);
-            alumno = new Alumnos(nia,nombre,apellido,fecha,grupo,telefono);
+            alumno = new Alumnos(nia,nombre,apellido,edad,grupo,telefono);
         }
     }
 
@@ -36,15 +36,15 @@ public class CentroB {
         int nia = faker.number().numberBetween(100000000,999999999);
         String nombre = faker.name().name();
         String apellido = faker.name().name();
-        String fecha = faker.date().toString();
+        int edad = faker.number().numberBetween(7, 30);
         int grupo = faker.number().numberBetween(0,10);
         int telefono = faker.number().numberBetween(60000000,69999999);
 
         int pos = recorrerArray(alumnos);
         if (pos >= 0) {
-            alumnos[pos] = new Alumnos(nia,nombre,apellido,fecha,grupo,telefono);
+            alumnos[pos] = new Alumnos(nia,nombre,apellido,edad,grupo,telefono);
         } else {
-            alumnos[contador] = new Alumnos(nia,nombre,apellido,fecha,grupo,telefono);
+            alumnos[contador] = new Alumnos(nia,nombre,apellido,edad,grupo,telefono);
             contador ++;
         }
     }
@@ -70,6 +70,7 @@ public class CentroB {
             }
         }
         if (res.equals(" ")) {
+
         }
     }
 
@@ -78,7 +79,7 @@ public class CentroB {
     public String searchForAge(int age) {
         for (int i = 0; i < alumnos.length; i ++) {
             String year = Integer.toString(age);
-            String yearTwo = alumnos[i].getFecha();
+            int yearTwo = alumnos[i].getEdad();
         }
         return" ";
     }

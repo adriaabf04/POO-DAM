@@ -4,15 +4,15 @@ public class Alumnos {
     private final int nia;
     private final String nombre;
     private final String apellidos ;
-    private final String fecha;
+    private final int edad;
     private final int grupo;
     private final int telefono;
 
-    public Alumnos(int nia, String nombre, String apellidos, String fecha, int grupo, int telefono) {
+    public Alumnos(int nia, String nombre, String apellidos, int edad, int grupo, int telefono) {
         this.nia = nia;
         this.nombre = nombre;
         this.apellidos = apellidos;
-        this.fecha = fecha;
+        this.edad = edad;
         this.grupo = grupo;
         this.telefono = telefono;
     }
@@ -29,8 +29,8 @@ public class Alumnos {
         return apellidos;
     }
 
-    public String getFecha() {
-        return fecha;
+    public int getEdad() {
+        return edad;
     }
 
     public int getGrupo() {return grupo;}
@@ -45,7 +45,7 @@ public class Alumnos {
                 "nia=" + nia +
                 ", nombre='" + nombre + '\'' +
                 ", apellidos='" + apellidos + '\'' +
-                ", fecha='" + fecha + '\'' +
+                ", edad='" + edad + '\'' +
                 ", grupo=" + grupo +
                 ", telefono=" + telefono +
                 '}';

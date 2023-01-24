@@ -1,5 +1,6 @@
 package com.adriaanbf04.tema07.ejercicio03;
 import java.util.Scanner;
+import com.adriaanbf04.tema07.UtillsAdri.IO;
 public class Ejercicio03 {
     public static Scanner scanner = new Scanner(System.in);
     private final static int MAX_ALUMNOS = 10;
@@ -18,9 +19,8 @@ public class Ejercicio03 {
                     }
                     break;
                 case 2:
-                    System.out.println("Introduce the NIA: ");
-                    int nia = scanner.nextInt();
-                    if(!centro.deleteStudent(nia)) {
+                    int niaDeleted = IO.readNumber("Introduce the NIA: ", 10000000,99999999);
+                    if(!centro.deleteStudent(niaDeleted)) {
                         System.out.println("No se encuentra el alumno");
                     } else {
                         System.out.println("Student deleted");
@@ -31,25 +31,42 @@ public class Ejercicio03 {
                         optionTwo = secondaryMenu();
                         switch (optionTwo) {
                             case 1:
-                                System.out.println("Introduce the group: ");
-                                int group = scanner.nextInt();
-                                centro.searchForGroup(group);
+                                int group = IO.readNumber("Introduce the group: ", 1);
+                                String res = centro.searchForGroup(group);
+                                if (res.equals(" ")) { 
+                                    System.out.println("Don't have results");
+                                } else {
+                                    System.out.println(res);
+                                }
                                 break;
                             case 2:
-                                System.out.println("Introduce the age: ");
-                                int age = scanner.nextInt();
-                                System.out.println(centro.searchForAge(age));
+                                int age = IO.readNumber("Introduce the age: ", 7);
+                                String years = centro.searchForAge(age);
+                                if (years.equals(" ")) {
+                                    System.out.println("Don't have results");
+                                } else {
+                                    System.out.println(years);
+                                }
                                 break;
                             case 3:
-                                System.out.println("Introduce the NIA: ");
-                                int niaStudent = scanner.nextInt();
-                                centro.searchForNia(niaStudent);
+                                int niaStudent = IO.readNumber("Introduce the NIA: ", 10000000,99999999);
+                                int nia =centro.searchForNia(niaStudent);
+                                if (nia < 0) {
+                                    System.out.println("Don't have results");
+                                } else {
+                                    System.out.println(nia);
+                                }
                                 break;
                             case 4:
-                                System.out.println("Introduce what letter start his surname: ");
-                                String surname = scanner.nextLine();
+                                String surname = IO.readMessage("Introduce the surname: ", 0);
                                 char letter = surname.charAt(0);
-                                System.out.println(centro.searchForSurname(letter));
+                                String firstLetter = String.valueOf(letter);
+                                String results = centro.searchForSurname(letter);
+                                if (results.equalsIgnoreCase(" ")) {
+                                    System.out.println("Don't have results");
+                                } else {
+                                    System.out.println(results);
+                                }
                                 break;
                         }
                     }while(optionTwo!= 0);
