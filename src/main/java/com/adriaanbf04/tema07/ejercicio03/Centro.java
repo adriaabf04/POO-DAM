@@ -48,9 +48,8 @@ public class Centro {
         return false;
     }
     public Alumnos[] searchForGroup(int group) {
-
         int cont = 0;
-        for (int i = 1; i < alumnos.length; i ++) {
+        for (int i = 1; i < contador; i ++) {
             int course = alumnos[i].getGrupo();
             if (course == group) {
                 cont++;
@@ -60,7 +59,6 @@ public class Centro {
         for (int i = 1; i < cont; i ++) {
             int course = alumnos[i].getGrupo();
             if (course == group) {
-                //Añadir a los alumnos
                 results[i] = alumnos[i];
             }
         }
@@ -87,10 +85,9 @@ public class Centro {
         return results;
     }
 
-    public String searchForSurname(char surnameLetter) {
+    public String searchForSurname(String surnameLetter) {
         //First letter of the surname written
         StringBuilder res = new StringBuilder();
-        String surname = Character.toString(surnameLetter);
         return res.toString();
     }
 
@@ -105,7 +102,7 @@ public class Centro {
     }
     public void listStudents() {
         int cont = 0;
-        for (int i = 0; i < alumnos.length; i ++) {
+        for (int i = 0; i < contador; i ++) {
             if (alumnos[i] != null) {
                 cont ++;
             }

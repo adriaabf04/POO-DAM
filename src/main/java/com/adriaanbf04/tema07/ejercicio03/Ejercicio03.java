@@ -52,10 +52,8 @@ public class Ejercicio03 {
                                 }
                                 break;
                             case 4:
-                                String surname = IO.readMessage("Introduce the surname: ", 0);
-                                char letter = surname.charAt(0);
-                                String firstLetter = String.valueOf(letter);
-                                String results = centro.searchForSurname(letter);
+                                String surname = IO.readMessage("Introduce the letter that surnames starts: ", 0);
+                                String results = centro.searchForSurname(surname);
                                 if (results.equalsIgnoreCase(" ")) {
                                     System.out.println("Don't have results");
                                 } else {

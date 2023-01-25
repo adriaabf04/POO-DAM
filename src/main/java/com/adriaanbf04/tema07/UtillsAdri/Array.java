@@ -75,8 +75,8 @@ public class Array {
      * @return the new array in String
      */
     public static void showArray(Object[] vector) {
-        for (Object num: vector) {
-            System.out.println(num + " ");
+        for (Object foo: vector) {
+            System.out.println(foo);
         }
     }
     /**
