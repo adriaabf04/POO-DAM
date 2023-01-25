@@ -1,4 +1,5 @@
 package com.adriaanbf04.tema07.UtillsAdri;
+import java.util.Objects;
 import java.util.Random;
 
 public class Array {
@@ -66,7 +67,18 @@ public class Array {
             System.out.println(num + " ");
         }
          
-     }
+    }
+    /**
+     * In this method we request the array created with the purpose to create an array with the condition
+     * that the numbers are from 0 until 50
+     * @param vector The initial array
+     * @return the new array in String
+     */
+    public static void showArray(Object[] vector) {
+        for (Object num: vector) {
+            System.out.println(num + " ");
+        }
+    }
     /**
      * ACTIVITY 16 UNIT 6 (with int)
      * In this method we will request an array type int with the purpose to calculate the average of it 

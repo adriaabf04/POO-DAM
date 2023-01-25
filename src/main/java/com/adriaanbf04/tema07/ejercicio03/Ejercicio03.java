@@ -1,5 +1,7 @@
 package com.adriaanbf04.tema07.ejercicio03;
 import java.util.Scanner;
+
+import com.adriaanbf04.tema07.UtillsAdri.Array;
 import com.adriaanbf04.tema07.UtillsAdri.IO;
 public class Ejercicio03 {
     public static Scanner scanner = new Scanner(System.in);
@@ -32,25 +34,17 @@ public class Ejercicio03 {
                         switch (optionTwo) {
                             case 1:
                                 int group = IO.readNumber("Introduce the group: ", 1);
-                                String res = centro.searchForGroup(group);
-                                if (res.equals(" ")) { 
-                                    System.out.println("Don't have results");
-                                } else {
-                                    System.out.println(res);
-                                }
+                                Alumnos[] resOne = centro.searchForGroup(group);
+                                Array.showArray(resOne);
                                 break;
                             case 2:
                                 int age = IO.readNumber("Introduce the age: ", 7);
-                                String years = centro.searchForAge(age);
-                                if (years.equals(" ")) {
-                                    System.out.println("Don't have results");
-                                } else {
-                                    System.out.println(years);
-                                }
+                                Alumnos[] resTwo = centro.searchForAge(age);
+                                Array.showArray(resTwo);
                                 break;
                             case 3:
                                 int niaStudent = IO.readNumber("Introduce the NIA: ", 10000000,99999999);
-                                int nia =centro.searchForNia(niaStudent);
+                                int nia = centro.searchForNia(niaStudent);
                                 if (nia < 0) {
                                     System.out.println("Don't have results");
                                 } else {
@@ -70,6 +64,9 @@ public class Ejercicio03 {
                                 break;
                         }
                     }while(optionTwo!= 0);
+                    break;
+                case 4:
+                    centro.listStudents();
             }
         }while(opcion!= 0);
     }
@@ -78,15 +75,16 @@ public class Ejercicio03 {
         boolean valid;
         int option;
         int min = 0;
-        int max = 3;
+        int max = 4;
         System.out.println("************************");
-        System.out.println("*******CLASSMATES*******");
+        System.out.println("*******STUDENTS*******");
         System.out.println("************************");
         System.out.println("\n");
         do {
             System.out.println("1. New classmate");
             System.out.println("2. Delete classmate");
             System.out.println("3. Queries");
+            System.out.println("4. List of students");
             System.out.println("-------------------------");
             System.out.println("0. Exit");
             System.out.println("Choose an option: ");

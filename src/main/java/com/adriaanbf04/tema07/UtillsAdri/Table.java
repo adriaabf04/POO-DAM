@@ -4,7 +4,7 @@ public class Table {
     public static Random random = new Random();
     /**
      * In this method, we generate a table
-     * @param table The table
+     * @param rows The table
      * @return res (The table which is generated)
      */
     public static int[][] generateRandomTable(int rows, int cols, int min, int max) {

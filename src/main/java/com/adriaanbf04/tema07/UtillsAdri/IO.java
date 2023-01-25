@@ -79,7 +79,6 @@ public class IO {
      * This method return the final text
      * @param message
      * @param min (The minium of the number that the users introduces)
-     * @param max (The max of the number that the users introduces)
      * @return finalNumber (The number that the user introduces, an int)
      */
     public static int readNumber(String message, int min) {
@@ -91,7 +90,7 @@ public class IO {
             lector.nextLine();
             valid = finalNumber >= min; 
             if (!valid) {
-                System.out.printf("The char have to have got a minium of %d and a max of %d numbers", min);
+                System.out.printf("The char have to have got a minium of %d", min);
             }
         } while(!valid);
         return finalNumber;
@@ -123,7 +122,6 @@ public class IO {
      * This method return the final text
      * @param message
      * @param min
-     * @param max
      * @return finalNumber (The number that the user introduces, a double)
      */
     public static double readDoubleNumber(String message, int min) {

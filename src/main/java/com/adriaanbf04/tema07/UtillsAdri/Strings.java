@@ -27,7 +27,7 @@ public class Strings {
             res = inicioString + firstString;
         }
         /*
-            SOLO HARÍA LA PRIMERA LETRA DE TODA LA FRASE 
+            SOLO HARIA LA PRIMERA LETRA DE TODA LA FRASE
             String firstLetter = Character.toString(c);
             String upper = firstLetter.toUpperCase();
             char d = upper.charAt(0);
@@ -42,7 +42,7 @@ public class Strings {
      * countWords("Hola mundo");
      * //outputs 9 (the number of words)
      * </blockquote></pre> 
-     * @param message
+     * @param oneString
      * @return The number of character of the String
     */
     public static int countWords(String oneString) {
