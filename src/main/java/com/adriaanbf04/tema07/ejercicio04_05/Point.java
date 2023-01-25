@@ -1,4 +1,4 @@
-package com.adriaanbf04.tema07.ejercicio04;
+package com.adriaanbf04.tema07.ejercicio04_05;
 
 public class Point {
     private double pointX;
