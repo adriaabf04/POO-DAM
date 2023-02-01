@@ -11,7 +11,7 @@ public class Menu {
         this.maxOptions = maxOptions;
     }
 
-    public int executeFourOptions(int maxOptions, String optOne, String optTwo, String optThree, String optFour) {
+    public int executeFourOptions(String optOne, String optTwo, String optThree, String optFour) {
         boolean valid;
         int optionChoosed;
         do {
@@ -34,7 +34,7 @@ public class Menu {
         return optionChoosed;
     }
 
-    public int executeForThree(int maxOptions, String optOne, String optTwo, String optThree) {
+    public int executeForThree(String optOne, String optTwo, String optThree) {
         boolean valid;
         int optionChoosed;
         do {

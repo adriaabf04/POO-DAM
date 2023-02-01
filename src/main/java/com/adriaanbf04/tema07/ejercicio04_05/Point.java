@@ -10,7 +10,7 @@ public class Point {
     }
 
     public Point() {
-        this(2.6,0.2);
+        this(0,0);
     }
     //Getters
 

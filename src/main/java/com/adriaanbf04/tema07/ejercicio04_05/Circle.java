@@ -1,7 +1,7 @@
 package com.adriaanbf04.tema07.ejercicio04_05;
 
 public class Circle {
-    public static final double PI = 3.14;
+    public static final double PI = Math.PI;
     private Point point;
     private double radiusCircle;
     public Circle(Point point, double radiusCircle) {
@@ -10,8 +10,7 @@ public class Circle {
     }
 
     public Circle(double x, double y, double radiusCircle) {
-        this.point = new Point(x,y);
-        this.radiusCircle = radiusCircle;
+        this(new Point(x,y),radiusCircle);
     }
 
     public Circle() {
@@ -34,20 +33,35 @@ public class Circle {
         this.radiusCircle = radiusCircle;
     }
 
+    /**
+     * This method calculate the distance between the center and the point passed
+     * @param point
+     * @return distance
+     */
     public double distance(Point point) {
-        return 0.0;
+        return this.point.distanceCalculation(point);
     }
 
+    /**
+     * This method calculate the area
+     * @return area
+     */
     public double calculateArea() {
-        double res = Math.pow(PI * radiusCircle,2);
-        return res;
+        return PI * Math.pow(radiusCircle,2);
     }
 
+    /**
+     * This method calculate the perimetre
+     * @return perimetre
+     */
     public double calculatePerimetre() {
-        double res = (2 * PI) * this.radiusCircle;
-        return res;
+        return (2 * PI) * this.radiusCircle;
     }
 
+    /**
+     * This method show the info of the circle with the center of the circle and the radius
+     * @return teh info of the circle
+     */
     public String showInfoCircle() {
         double x = point.getPointX();
         double y = point.getPointY();

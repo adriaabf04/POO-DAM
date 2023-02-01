@@ -68,12 +68,6 @@ public class Array {
         }
          
     }
-    /**
-     * In this method we request the array created with the purpose to create an array with the condition
-     * that the numbers are from 0 until 50
-     * @param vector The initial array
-     * @return the new array in String
-     */
     public static void showArray(Object[] vector) {
         for (Object foo: vector) {
             System.out.println(foo);
@@ -180,7 +174,7 @@ public class Array {
     /**
      * In this method we will look up the number in the array
      * @param array The array created
-     * @param numInArray The number which is will be searched
+     * @param numInArray The number which will be searched
      * @return
      */
     public static int lookUpNumber(int[] array, int numInArray) {
@@ -191,4 +185,6 @@ public class Array {
         }
         return -1;
     }
+
+
 }
