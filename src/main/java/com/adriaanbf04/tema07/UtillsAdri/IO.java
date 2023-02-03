@@ -168,7 +168,7 @@ public class IO {
      * @param max
      * @return character (a char that the user introduces)
      */
-    public static void readChar(String message, int min, int max) {
+    public static char readChar(String message, int min, int max) {
         boolean valid;
         char character;
         do {
@@ -179,6 +179,7 @@ public class IO {
                 System.out.printf("The char have to have got a minum of %d and a max of %d letters", min, max);
             }
         } while(!valid);
+        return character;
     }
     
 }

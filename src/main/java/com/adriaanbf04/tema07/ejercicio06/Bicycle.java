@@ -69,11 +69,11 @@ public class Bicycle {
                 "reference='" + reference + '\'' +
                 ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
-                ", peso=" + peso +
+                ", peso=" + peso + "kg" +
                 ", wheelsSize=" + wheelsSize +
                 ", containMotor=" + containMotor +
                 ", dataDone='" + dataDone + '\'' +
-                ", price=" + price +
+                ", price=" + price + "€" +
                 ", cuantityProduct=" + cuantityProduct +
                 '}';
     }

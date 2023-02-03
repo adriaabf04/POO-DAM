@@ -6,7 +6,6 @@ public class BycicleShop {
     Faker faker = new Faker();
     private Bicycle[] bycicle;
 
-    private Bicycle bicycle;
     private int count;
 
     public BycicleShop(int maxBycicles) {
@@ -47,7 +46,7 @@ public class BycicleShop {
      * @return If teh bycicle is deleted or not
      */
     public boolean deleteBycicle(String ref) {
-        int posRef = searchReference(ref);
+        int posRef = searchPosReference(ref);
         boolean valid = posRef >= 0;
         if (valid) {
             int stock = bycicle[posRef].getCuantityProduct();
@@ -69,7 +68,7 @@ public class BycicleShop {
      * @param reference
      * @return The position of the object
      */
-    public int searchReference(String reference) {
+    private int searchPosReference(String reference) {
         for (int i = 0; i < count; i ++) {
             if (bycicle[i].getReference().equals(reference)) {
                 return i;

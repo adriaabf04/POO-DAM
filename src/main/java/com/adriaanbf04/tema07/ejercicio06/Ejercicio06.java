@@ -33,7 +33,7 @@ public class Ejercicio06 {
                         optionTwo = menuTwo.executeForThree("1. Reference","2. Brand","3. Model");
                         switch(optionTwo) {
                             case 1:
-                                String  reference = IO.readMessage("Introduce the reference: ",0);
+                                String reference = IO.readMessage("Introduce the reference: ",0);
                                 Bicycle[] res = shop.searchForReference(reference);
                                 Array.showArray(res);
                                 break;
