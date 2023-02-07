@@ -1,4 +1,5 @@
 package com.adriaanbf04.tema07;
+import com.adriaanbf04.tema07.ArrayListLearning.TestArryList;
 import com.adriaanbf04.tema07.ejercicio03.Ejercicio03;
 import com.adriaanbf04.tema07.ejercicio04_05.Ejercicio04;
 import com.adriaanbf04.tema07.ejercicio04_05.Ejercicio05;
@@ -13,6 +14,7 @@ public class Main {
         //Ejercicio04 ejercicio04 = new Ejercicio04();
         //Ejercicio05 ejercicio05 = new Ejercicio05();
         //Ejercicio06 ejercicio06 = new Ejercicio06();
-        Ejercicio07 ejercicio07 = new Ejercicio07();
+        //Ejercicio07 ejercicio07 = new Ejercicio07();
+        TestArryList testArryList = new TestArryList();
     }
 }
