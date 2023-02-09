@@ -1,12 +1,13 @@
 package com.adriaanbf04.tema07.ArrayListLearning;
 
+import java.io.CharArrayReader;
 import java.util.Arrays;
 
-public class ArrayListExample {
+public class ClassJavaQueque {
     private final static float GROW_FACTOR = 2f;
     private int[] data;
     private int size;
-    public ArrayListExample(int capacity) {
+    public ClassJavaQueque(int capacity) {
         data = new int[capacity];
         size = 0;
     }
@@ -16,30 +17,16 @@ public class ArrayListExample {
     }
 
     public boolean add(int num) {
-        if (size >= data.length) {
-            data = resize();
+        if (isFull()) {
+           data = resize();
         }
         data[size] = num;
         size++;
         return true;
     }
-
-    private void moveToRight(int index) {
-        for (int i = size; i > data.length; i--) {
-            data[i] = data[i--];
-        }
-        size++;
+    private boolean isFull() {
+        return size >= data.length;
     }
-
-    public boolean add(int index,int num) {
-        if (size >= data.length) {
-            data = resize();
-        }
-        moveToRight(index);
-        data[index] = num;
-        return true;
-    }
-
     public boolean set(int index, int value) {
         if (index > size) {
             return false;
@@ -60,14 +47,8 @@ public class ArrayListExample {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("[ ");
-        for (int i = 0; i < size; i++) {
-            sb.append(data[i]).append(" ");
-        }
-        sb.append("]");
-        return "ArrayListExample{" +
-                "data=" + sb.toString() +
+        return "ClassJavaQueque{" +
+                "data=" + Arrays.toString(data) +
                 ", size=" + size +
                 '}';
     }
